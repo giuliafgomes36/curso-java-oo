@@ -10,4 +10,13 @@ public class Conta {
     public void deposita (double valor){
         this.saldo += valor;//Usamos o this para referir ao atributo do objeto que invocou o método.
     }
+
+    public boolean saca (double valor){
+        if (this.saldo >= valor){
+            this.saldo -= valor;
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
