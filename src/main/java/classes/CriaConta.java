@@ -8,12 +8,12 @@ public class CriaConta {
         conta1.setNumero(1);
 
         Cliente cliente1 = new Cliente();
-        cliente1.nome = "Giulia Ferreira";
-        cliente1.cpf = "222.222.222-22";
-        cliente1.profissao = "Estagiária";
+        cliente1.setNome("Giulia Ferreira");
+        cliente1.setCpf("222.222.222-22");
+        cliente1.setProfissao("Estagiária");
 
         conta1.setTitular(cliente1); //Estou referenciando que o titular da conta1 é a cliente1.
-        System.out.println("O titular da conta " + conta1.getNumero() + " é: "+ conta1.getTitular().nome);
+        System.out.println("O titular da conta " + conta1.getNumero() + " é: "+ conta1.getTitular().getNome());
 
         //Mostrando que o conta1.titular e o cliente1 fazem referência para o mesmo objeto.
         System.out.println(conta1.getTitular());
@@ -26,8 +26,8 @@ public class CriaConta {
         conta2.setNumero(2);
 
         conta2.setTitular(new Cliente());
-        conta2.getTitular().nome = "Giulia Ferreira";
-        System.out.println("O titular da conta " + conta2.getNumero() + " é: "+ conta2.getTitular().nome);
+        conta2.getTitular().setNome("Giulia Ferreira");
+        System.out.println("O titular da conta " + conta2.getNumero() + " é: "+ conta2.getTitular().getNome());
 
 
 
