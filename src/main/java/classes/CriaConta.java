@@ -3,9 +3,8 @@ package classes;
 public class CriaConta {
     public static void main(String[] args) {
 
-        Conta conta1 = new Conta();
+        Conta conta1 = new Conta(123,321);
         conta1.deposita(200);
-        conta1.setNumero(1);
 
         Cliente cliente1 = new Cliente();
         cliente1.setNome("Giulia Ferreira");
@@ -22,8 +21,7 @@ public class CriaConta {
         System.out.println();
 
         //Criando titular de outra maneira:
-        Conta conta2 = new Conta();
-        conta2.setNumero(2);
+        Conta conta2 = new Conta(456,654);
 
         conta2.setTitular(new Cliente());
         conta2.getTitular().setNome("Giulia Ferreira");

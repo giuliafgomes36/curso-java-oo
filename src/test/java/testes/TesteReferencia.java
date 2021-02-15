@@ -6,7 +6,7 @@ public class TesteReferencia {
 
     public static void main(String[] args) {
 
-        Conta conta1 = new Conta();
+        Conta conta1 = new Conta(444,555);
         conta1.deposita(200);
 
         Conta conta2 = conta1; //Temos duas referências conta1 e conta2 para o mesmo objeto.
