@@ -27,9 +27,8 @@ public class CriaConta {
         conta2.getTitular().setNome("Giulia Ferreira");
         System.out.println("O titular da conta " + conta2.getNumero() + " é: "+ conta2.getTitular().getNome());
 
-
-
-
-
+        //Método static:
+        System.out.println();
+        System.out.println("O total de contas é: "+ Conta.getTotal());
     }
 }
