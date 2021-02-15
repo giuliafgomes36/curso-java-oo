@@ -7,11 +7,11 @@ public class TesteReferencia {
     public static void main(String[] args) {
 
         Conta conta1 = new Conta();
-        conta1.saldo = 200;//Precisei definir o atributo "saldo" como public para poder acessar.
+        conta1.deposita(200);
 
         Conta conta2 = conta1; //Temos duas referências conta1 e conta2 para o mesmo objeto.
-        System.out.println(conta1.saldo);
-        System.out.println(conta2.saldo);
+        System.out.println(conta1.getSaldo());
+        System.out.println(conta2.getSaldo());
 
         if(conta1 == conta2){
             System.out.println("São a mesma conta");
