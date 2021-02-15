@@ -6,8 +6,11 @@ public class Conta {
     private int agencia;
     private int numero;
     private Cliente titular;
+    private static int total;//O static esta se referenciando à classe e não a um objeto em específico (lembra uma variável global)
+
 
     public Conta(int agencia, int numero){
+        Conta.total++;
         this.setAgencia(agencia);
         this.setNumero(numero);
     }
@@ -69,5 +72,7 @@ public class Conta {
         this.titular = titular;
     }
 
-
+    public static int getTotal(){
+        return Conta.total;
+    }
 }
