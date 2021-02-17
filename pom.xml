@@ -10,6 +10,8 @@
     <artifactId>curso-java-oo</artifactId>
 
     <version>0.1-snapshot</version>
+         
+    <packaging>jar</packaging>
 
     <properties>
 
