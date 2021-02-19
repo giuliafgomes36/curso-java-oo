@@ -13,7 +13,7 @@ public class TesteMetodo {
         System.out.println();
 
         //Sacando um valor
-        conta1.saca(20);
+        //conta1.saca(20);
         System.out.println("Saldo da conta1 após o saque: " + conta1.getSaldo());
 
         System.out.println();
@@ -25,6 +25,7 @@ public class TesteMetodo {
         System.out.println("Saldo da conta1: " + conta1.getSaldo());
         System.out.println();
 
+        /*
         if(conta2.transfere(300, conta1)){
 
             System.out.println("Transferência realizada com sucesso");
@@ -33,6 +34,8 @@ public class TesteMetodo {
         } else {
             System.out.println("Não foi possível realizar a transferência");
         }
+
+         */
 
     }
 }
