@@ -1,4 +1,8 @@
-package classes;
+package conta;
+
+import exception.SaldoException;
+import pessoa.Cliente;
+import pessoa.Nome;
 
 public class CriaConta {
     public static void main(String[] args) {
@@ -7,7 +11,7 @@ public class CriaConta {
         conta1.deposita(200);
 
         Cliente cliente1 = new Cliente();
-        cliente1.setNome("Giulia Ferreira");
+        cliente1.setNome(Nome.criar("Giulia","Ferreira"));
         cliente1.setCpf("222.222.222-22");
         cliente1.setProfissao("Estagiária");
 
@@ -24,7 +28,7 @@ public class CriaConta {
         Conta conta2 = new Conta(456,654);
 
         conta2.setTitular(new Cliente());
-        conta2.getTitular().setNome("Giulia Ferreira");
+        conta2.getTitular().setNome(Nome.criar("Giulia","Ferreira"));
         System.out.println("O titular da conta " + conta2.getNumero() + " é: "+ conta2.getTitular().getNome());
 
         //Método static:

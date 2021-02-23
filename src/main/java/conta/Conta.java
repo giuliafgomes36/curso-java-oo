@@ -1,4 +1,13 @@
-package classes;
+package conta;
+
+/**
+ * Moldura de uma conta
+ *
+ * @author Giulia Ferreira Gomes
+ */
+
+import exception.SaldoException;
+import pessoa.Cliente;
 
 public class Conta {
     //Os atributos por padrão são zerados.
@@ -23,22 +32,17 @@ public class Conta {
         this.saldo += valor;//Usamos o this para referir ao atributo do objeto que invocou o método.
     }
 
-    public boolean saca (double valor){
-        if (this.saldo >= valor){
-            this.saldo -= valor;
-            return true;
-        } else {
-            return false;
+    public void saca (double valor) throws SaldoException{
+        if (this.saldo < valor){
+            throw new SaldoException("Saldo: " + this.saldo + ", Valor: " + valor);
         }
+        this.saldo -= valor;
+
     }
 
-    public boolean transfere(double valor, Conta destino){
-        if (this.saldo >=valor){
+    public void transfere(double valor, Conta destino) throws SaldoException{
             this.saca(valor);
             destino.deposita(valor);
-            return true;
-        }
-        return false;
     }
 
     public int getAgencia() {

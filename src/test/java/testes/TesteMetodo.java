@@ -1,5 +1,5 @@
 package testes;
-import classes.Conta;
+import conta.Conta;
 
 public class TesteMetodo {
 

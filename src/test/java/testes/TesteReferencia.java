@@ -1,6 +1,6 @@
 package testes;
 
-import classes.Conta;//Importamos a classe para poder usar em um pacote distinto.
+import conta.Conta;//Importamos a classe para poder usar em um pacote distinto.
 
 public class TesteReferencia {
 
