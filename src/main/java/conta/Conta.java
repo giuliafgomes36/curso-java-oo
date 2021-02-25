@@ -9,23 +9,21 @@ package conta;
 import exception.SaldoException;
 import pessoa.Cliente;
 
+import java.util.Objects;
+
 public class Conta {
     //Os atributos por padrão são zerados.
     private double saldo;
     private int agencia;
     private int numero;
     private Cliente titular;
-    private static int total;//O static esta se referenciando à classe e não a um objeto em específico (lembra uma variável global)
+    private static int total;//O static esta se referenciando à classe e não a um objeto em específico.
 
-
+    //Construtor
     public Conta(int agencia, int numero){
         Conta.total++;
         this.setAgencia(agencia);
         this.setNumero(numero);
-    }
-
-    public double getSaldo() {
-        return saldo;
     }
 
     public void deposita (double valor){
@@ -43,6 +41,10 @@ public class Conta {
     public void transfere(double valor, Conta destino) throws SaldoException{
             this.saca(valor);
             destino.deposita(valor);
+    }
+
+    public double getSaldo() {
+        return saldo;
     }
 
     public int getAgencia() {
@@ -78,6 +80,20 @@ public class Conta {
 
     public static int getTotal(){
         return Conta.total;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        Conta conta = (Conta) o;
+
+        if(this.agencia != ((Conta) o).agencia){
+            return false;
+        }
+        if (this.numero != ((Conta) o).numero){
+            return false;
+        }
+        return true;
     }
 
     @Override
