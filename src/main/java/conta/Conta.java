@@ -79,4 +79,14 @@ public class Conta {
     public static int getTotal(){
         return Conta.total;
     }
+
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "saldo=" + saldo +
+                ", agencia=" + agencia +
+                ", numero=" + numero +
+                ", titular=" + titular +
+                '}';
+    }
 }
