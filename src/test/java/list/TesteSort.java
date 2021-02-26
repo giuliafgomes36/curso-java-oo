@@ -8,7 +8,6 @@ import pessoa.Nome;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.SplittableRandom;
 
 public class TesteSort {
 
