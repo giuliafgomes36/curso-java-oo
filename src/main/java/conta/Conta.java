@@ -9,7 +9,7 @@ package conta;
 import exception.SaldoException;
 import pessoa.Cliente;
 
-public class Conta {
+public class Conta implements Comparable<Conta>{
     //Os atributos por padrão são zerados.
     private double saldo;
     private int agencia;
@@ -100,5 +100,10 @@ public class Conta {
                 ", numero=" + numero +
                 ", titular=" + titular.getNome() +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Conta o) {
+        return Double.compare(this.saldo, o.saldo);
     }
 }
