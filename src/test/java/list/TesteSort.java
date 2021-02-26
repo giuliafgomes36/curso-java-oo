@@ -6,6 +6,7 @@ import pessoa.Cliente;
 import pessoa.Nome;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -18,21 +19,25 @@ public class TesteSort {
         Cliente cliente1 = new Cliente();
         cliente1.setNome(Nome.criar("Giulia", "Ferreira"));
         conta1.setTitular(cliente1);
+        conta1.deposita(11);
 
         Conta conta2 = new Conta(11,44);
         Cliente cliente2 = new Cliente();
         cliente2.setNome(Nome.criar("Romeu","Gervasio"));
         conta2.setTitular(cliente2);
+        conta2.deposita(44);
 
         ContaCorrente contaCorrente1 = new ContaCorrente(11,33);
         Cliente cliente3 = new Cliente();
         cliente3.setNome(Nome.criar("Giulia","Borges"));
         contaCorrente1.setTitular(cliente3);
+        contaCorrente1.deposita(33);
 
         ContaCorrente contaCorrente2 = new ContaCorrente(11,22);
         Cliente cliente4 = new Cliente();
         cliente4.setNome(Nome.criar("Carlos","Alberto"));
         contaCorrente2.setTitular(cliente4);
+        contaCorrente2.deposita(22);
 
         //Adicionando contas à lista:
         List<Conta> contas = new ArrayList<>();
@@ -71,6 +76,23 @@ public class TesteSort {
         for (Conta conta : contas){
             System.out.println(conta);
         }
+
+        System.out.println();
+        System.out.println("Ordem natural: saldo");
+
+        for (Conta conta : contas){
+            System.out.println(conta);
+        }
+
+        Collections.sort(contas);
+
+        System.out.println();
+
+        for (Conta conta : contas){
+            System.out.println(conta);
+        }
+
+
     }
 }
 
