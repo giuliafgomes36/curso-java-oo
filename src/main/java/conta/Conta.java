@@ -9,8 +9,6 @@ package conta;
 import exception.SaldoException;
 import pessoa.Cliente;
 
-import java.util.Objects;
-
 public class Conta {
     //Os atributos por padrão são zerados.
     private double saldo;
@@ -85,8 +83,6 @@ public class Conta {
     @Override
     public boolean equals(Object o) {
 
-        Conta conta = (Conta) o;
-
         if(this.agencia != ((Conta) o).agencia){
             return false;
         }
@@ -102,7 +98,7 @@ public class Conta {
                 "saldo=" + saldo +
                 ", agencia=" + agencia +
                 ", numero=" + numero +
-                ", titular=" + titular +
+                ", titular=" + titular.getNome() +
                 '}';
     }
 }
