@@ -16,26 +16,22 @@ public class TesteSort {
 
         //Criando contas e titulares:
         Conta conta1 = new Conta(11,11);
-        Cliente cliente1 = new Cliente();
-        cliente1.setNome(Nome.criar("Giulia", "Ferreira"));
+        Cliente cliente1 = new Cliente(Nome.criar("Giulia", "Ferreira"), "222.222.222-22", "Estagiaria");
         conta1.setTitular(cliente1);
         conta1.deposita(11);
 
         Conta conta2 = new Conta(11,44);
-        Cliente cliente2 = new Cliente();
-        cliente2.setNome(Nome.criar("Romeu","Gervasio"));
+        Cliente cliente2 = new Cliente(Nome.criar("Romeu","Gervasio"), "333.333.333-33", "Agrônomo");
         conta2.setTitular(cliente2);
         conta2.deposita(44);
 
         ContaCorrente contaCorrente1 = new ContaCorrente(11,33);
-        Cliente cliente3 = new Cliente();
-        cliente3.setNome(Nome.criar("Giulia","Borges"));
+        Cliente cliente3 = new Cliente(Nome.criar("Giulia","Borges"), "444.444.444-44", "Estudante");
         contaCorrente1.setTitular(cliente3);
         contaCorrente1.deposita(33);
 
         ContaCorrente contaCorrente2 = new ContaCorrente(11,22);
-        Cliente cliente4 = new Cliente();
-        cliente4.setNome(Nome.criar("Carlos","Alberto"));
+        Cliente cliente4 = new Cliente(Nome.criar("Carlos","Alberto"), "555.555.555-55", "Ator");
         contaCorrente2.setTitular(cliente4);
         contaCorrente2.deposita(22);
 
@@ -54,7 +50,8 @@ public class TesteSort {
             System.out.println(conta);//Chama o toString
         }
 
-        contas.sort(new NumeroComparator());//sort recebe como parâmetro uma referência de uma classe que implementa a interface Comparator.
+        NumeroComparator comparator = new NumeroComparator();
+        contas.sort(comparator);//sort recebe como parâmetro uma referência de uma classe que implementa a interface Comparator.
 
         System.out.println();
 
@@ -84,7 +81,7 @@ public class TesteSort {
             System.out.println(conta);
         }
 
-        Collections.sort(contas);
+        Collections.sort(contas);//o método sort vem da interface Collections (Collections -> List -> ArrayList/LinkedList/Vector)
 
         System.out.println();
 
